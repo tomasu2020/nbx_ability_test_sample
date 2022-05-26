@@ -1,6 +1,8 @@
 <?php
+// error_reporting(-1);
+// ini_set('display_errors', '1');
 
-include(__DIR__."/loader.php");
+include __DIR__."/loader.php";
 
 // 素数の準備
 // 本来はPrimeNumberクラスのコンストラクタでやるべきことだが、テスト用にクラス外であえて実行
