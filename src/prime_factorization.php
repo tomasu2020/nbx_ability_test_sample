@@ -19,6 +19,8 @@ class PrimeFactorization extends PrimeNumber{
 			}
 		}
 
+		$factor["status"] = ($num === 1) ? "success":"fail";
+
 		return $factor;
 	}
 
@@ -40,6 +42,11 @@ class PrimeFactorization extends PrimeNumber{
 				}
 				$str .= "{$prime_num}";
 			}
+		}
+
+		// 素数が足りずに失敗した場合は最後にfailをつける
+		if ($factors["status"] === "fail") {
+			$str .= "--- fail";
 		}
 
 		return $str;

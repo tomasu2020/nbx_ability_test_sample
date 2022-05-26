@@ -4,21 +4,21 @@
 class PrimeNumber {
 	static protected array $prime_number_list=[]; // 素数リスト
 	static private $last_number; // 最後に素数チェックをした数値
-	static private $initialized = false;
+	private $initialized = false;
 
 	// コンストラクタ
 	function __construct() {
-		if (empty(self::$prime_number_list)) {
+		if (!empty(self::$prime_number_list)) {
 			self::$prime_number_list = [1];
 			self::$last_number = 1;
 		}
-		self::$initialized = true;
+		$this->initialized = true;
 	}
 
 	// 直前に探した素数より大きい整数から$limitまでの次の素数を探して返す
 	public function getNext($limit = 100) {
 
-		if (self::$initialized === false) {
+		if ($this->initialized === false) {
 			echo self::class."のコンストラクタが実行されていません。";
 			exit(-1);
 		}
