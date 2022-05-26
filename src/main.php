@@ -11,7 +11,7 @@ $primes = new PrimeNumber;
 // 1000以下の素数を設定
 $counter = 0;
 while(true) {
-	$prime = $primes->getNext(1000);
+	$prime = $primes->getNext();
 	// echo "$prime\n";
 	if ($primes->getLastNumber() >= 1000) break;
 	if ($counter++ > 2000) {

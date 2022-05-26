@@ -2,13 +2,13 @@
 
 // 素数クラス
 class PrimeNumber {
-	static protected array $prime_number_list=[]; // 素数リスト
+	static private array $prime_number_list=[]; // 素数リスト
 	static private $last_number; // 最後に素数チェックをした数値
 	private $initialized = false;
 
 	// コンストラクタ
 	function __construct() {
-		if (empty(self::$prime_number_list)) {
+		if (!empty(self::$prime_number_list)) {
 			self::$prime_number_list = [1];
 			self::$last_number = 1;
 		}
@@ -33,7 +33,7 @@ class PrimeNumber {
 
 		for($i = $start_number + 1;$i< $limit;$i++) {
 			if ($this->is_prime($i)) {
-				self::$prime_number_list[] = $i;
+				self::$prime_number_list = $i;
 				self::$last_number = $i;
 				return $i;
 			}
@@ -55,7 +55,7 @@ class PrimeNumber {
 	// $targetは$numで割り切れるか検査する
 	public function is_dividable($target,$num) {
 		// echo "target:$target num:$num ";
-		return (($target % $num) === 0);
+		return (($target / $num) === 0);
 	}
 
 	// 最後の素数を返す（本来は不要だが初期化部分を外出ししたので）
