@@ -7,7 +7,7 @@ class PrimeNumber {
 	private $initialized = false;
 
 	// コンストラクタ
-	function __construct() {
+	function __constructor() {
 		if (!empty(self::$prime_number_list)) {
 			self::$prime_number_list = [1];
 			self::$last_number = 1;
