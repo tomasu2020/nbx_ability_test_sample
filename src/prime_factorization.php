@@ -37,6 +37,7 @@ class PrimeFactorization extends PrimeNumber{
 		// 掛け算の文字列に変換する
 		$str = "";
 		foreach($factors as $prime_num => $count) {
+			if ($prime_num == "status") continue;
 			for($j = 0; $j < $count; $j++) {
 				if ($str !== "") {
 					$str .= "x";
