@@ -17,6 +17,7 @@ class PrimeFactorization extends PrimeNumber{
 				}
 				$factor[$devide]++;
 			}
+			if ($num === 1) break;
 		}
 
 		$factor["status"] = ($num === 1) ? "success":"fail";
