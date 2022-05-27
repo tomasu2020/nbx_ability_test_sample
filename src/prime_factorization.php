@@ -20,7 +20,10 @@ class PrimeFactorization extends PrimeNumber{
 			if ($num === 1) break;
 		}
 
-		$factor["status"] = ($num === 1) ? "success":"fail";
+		if ($num !== 1) {
+			echo "$num を素因数分解に必要な素数が足りませんでした。\n";
+			exit(-1);
+		}
 
 		return $factor;
 	}
@@ -37,18 +40,12 @@ class PrimeFactorization extends PrimeNumber{
 		// 掛け算の文字列に変換する
 		$str = "";
 		foreach($factors as $prime_num => $count) {
-			if ($prime_num === "status") continue;
 			for($j = 0; $j < $count; $j++) {
 				if ($str !== "") {
 					$str .= "x";
 				}
 				$str .= "{$prime_num}";
 			}
-		}
-
-		// 素数が足りずに失敗した場合は最後にfailをつける
-		if ($factors["status"] === "fail") {
-			$str .= "--- fail";
 		}
 
 		return $str;
