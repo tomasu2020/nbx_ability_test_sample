@@ -17,9 +17,13 @@ class PrimeFactorization extends PrimeNumber{
 				}
 				$factor[$devide]++;
 			}
+			if ($num === 1) break;
 		}
 
-		$factor["status"] = ($num === 1) ? "success":"fail";
+		if ($num !== 1) {
+			echo "$num を素因数分解に必要な素数が足りませんでした。\n";
+			exit(-1);
+		}
 
 		return $factor;
 	}
@@ -42,11 +46,6 @@ class PrimeFactorization extends PrimeNumber{
 				}
 				$str .= "{$prime_num}";
 			}
-		}
-
-		// 素数が足りずに失敗した場合は最後にfailをつける
-		if ($factors["status"] === "fail") {
-			$str .= "--- fail";
 		}
 
 		return $str;
