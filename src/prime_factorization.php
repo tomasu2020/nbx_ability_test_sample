@@ -11,11 +11,8 @@ class PrimeFactorization extends PrimeNumber{
 		foreach(self::$prime_number_list as $divide) {
 			if ($divide === 1) continue; // 1は全て割れてしまうので除外
 			while($this->is_dividable($num, $divide)) {
-				$num /= $divide;
-				if (empty($factor[$divide])) {
-					$factor[$divide] = 0;
-				}
-				$factor[$divide]++;
+				$num /= $devide;
+				$factor[$devide]++;
 			}
 			if ($num === 1) break;
 		}
