@@ -45,9 +45,9 @@ class PrimeNumber {
 
 	// prime_number_listの要素で割り切れない数か検査する
 	private function is_prime($num) {
-		foreach(self::$prime_number_list as $devide) {
-			if ($devide === 1) continue;
-			if ($this->is_dividable($num, $devide) === true) return false;
+		foreach(self::$prime_number_list as $divide) {
+			if ($divide === 1) continue;
+			if ($this->is_dividable($num, $divide) === true) return false;
 		}
 		return true;
 	}

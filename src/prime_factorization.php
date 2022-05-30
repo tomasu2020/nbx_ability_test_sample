@@ -8,14 +8,14 @@ class PrimeFactorization extends PrimeNumber{
 	private function factorization($num) {
 		$factor = [];
 
-		foreach(self::$prime_number_list as $devide) {
-			if ($devide === 1) continue; // 1は全て割れてしまうので除外
-			while($this->is_dividable($num, $devide)) {
-				$num /= $devide;
-				if (empty($factor[$devide])) {
-					$factor[$devide] = 0;
+		foreach(self::$prime_number_list as $divide) {
+			if ($divide === 1) continue; // 1は全て割れてしまうので除外
+			while($this->is_dividable($num, $divide)) {
+				$num /= $divide;
+				if (empty($factor[$divide])) {
+					$factor[$divide] = 0;
 				}
-				$factor[$devide]++;
+				$factor[$divide]++;
 			}
 			if ($num === 1) break;
 		}
