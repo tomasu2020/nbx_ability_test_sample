@@ -4,7 +4,14 @@ require __DIR__."/prime_number.php";
 
 class PrimeFactorization extends PrimeNumber{
 
-	// 素因数分解本体
+	/*
+	 * 素因数分解本体
+	 *
+	 * @param int $num
+	 * @return array $factor
+	 * 素数をindexとし、素数が素因数となる数をvalueとした連想配列で返す
+	 *   例）  $num=12 --> $factor=[2=>2,3=>1]
+	 */
 	private function factorization($num) {
 		$factor = [];
 
