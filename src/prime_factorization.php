@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__."/prime_number.php";
+require __DIR__."/prime_number.php";
 
 class PrimeFactorization extends PrimeNumber{
 
@@ -17,14 +17,11 @@ class PrimeFactorization extends PrimeNumber{
 
 		$index = 0;
 		for($i = 0; $i < count(self::$prime_number_list); $i++) {
-			$divide = self::$prime_number_list[$index++];
+			$divide = self::$prime_number_list[$index];
 			if ($divide === 1) continue; // 1は全て割れてしまうので除外
 			while($this->is_dividable($num, $divide)) {
-				$num /= $divide;
-				if (empty($factor[$divide])) {
-					$factor[$divide] = 0;
-				}
-				$factor[$divide]++;
+				$num /= $devide;
+				$factor[$devide]++;
 			}
 			if ($num === 1) break;
 		}
